@@ -63,11 +63,11 @@ This app takes a picture with your device's camera and then displays color infor
 	</canvas><br> <!-- creates canvas for user to input image --> 
 
 	    
-      <p>Touch the picture to see an output of your RGB and HSV values.</p> <!-- message above canvas -->
+      <p>Touch the picture to see an output of your RGB values, HSV values, color name, and predicted pH.</p> <!-- message above canvas -->
       <p id="messageDisplayArea">This area will be replaced by the RGB values once the image is tapped.</p> <!-- message above canvas -->
 	<p id="messageDisplayArea2">This area will be replaced by the HSV values once the image is tapped.</p> <!-- message above canvas -->
 	<p id="messageDisplayArea3">This area will be replaced by the color name once the image is tapped.</p> <!-- message above canvas -->
-
+  <p id="messageDisplayArea4">This area will be replaced by the predicted pH once the image is tapped.</p>
 		  </div>
 <!--    <footer class="w3-bottom w3-container w3-flat-carrot">
       <p>DIY Diagnostics</p>
@@ -87,7 +87,7 @@ This app takes a picture with your device's camera and then displays color infor
    	 const message = document.getElementById('messageDisplayArea');
 	  const message2 = document.getElementById('messageDisplayArea2');
 	const message3 = document.getElementById('messageDisplayArea3');
-
+    const message4 = document.getElementById('messageDisplayArea4');
 	  
 	const fileInput = document.getElementById('fileInput');
     let loadedImage = null;
@@ -136,6 +136,7 @@ function rgbToHsv(r, g, b) {
       message.innerText = "HSV values= " + Math.round(h) + ", " + Math.round(s) + ", " + Math.round(v);
 	message2.innerText = "RGB values= " + Math.round(pixel[0]) + ", " + Math.round(pixel[1]) + ", " + Math.round(pixel[2]);
 	    message3.innerText = "Color Name= " + colorName;
+      message4.innerText = "Predicted pH = "
     }; 
 // color that is tapped and detected is shown below the selected photo
    
